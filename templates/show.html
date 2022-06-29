@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body class="d">
+    
+    <h1 style="text-align: center;padding-top: 100px;color: black; "><b>SHOW STUDENT DETAILS</b> </h1>
+
+    <center>
+        <table  class="tab" border="2px">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>EMAIL</th>
+                    <th>PHONE NO </th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for s in students %}
+                <tr>
+                    <td>{{ s.id }}</td>
+                    <td><a href="{% url 'ind_details' s.id %}" >{{ s.s_name }}</a></td>
+                    <td>{{ s.s_email }}</td>
+                    <td>{{ s.s_pno}}</td>
+                    <td>
+                        <a href="{% url 'edit' s.id %}">Edit</a><br>
+                        <a href="{% url 'delete' s.id %}" >Delete</a>
+
+                    </td>
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </center>
+    
+    
+</body>
+</html>

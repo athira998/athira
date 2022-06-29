@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    
+</head>
+<body>
+    <div class="a">
+    <h1 style="text-align: center; color:black; padding-top: 10px;"> ADD STUDENT DETAILS </h1>
+    </div>
+    <div class="b">
+    <center>
+        <form method="post" action="{% url 'add_student_details' %}">
+            {% csrf_token %}
+            <div class="c">
+            <label><b>Enter Student Name : </b></label>
+            <input type="text" name="s_name"><br><br>
+        
+            <label><b> Student Address : </b></label>
+            <input type="text" name="s_address"><br><br>
+            <label><b>Enter Student Age :</b> </label>
+            <input type="number" name="s_age"><br><br>
+            <label><b>Enter Student Gender : </b></label>
+            <input type="radio" name="s_gender" value="male">
+            <label>male</label>
+            <input type="radio" name="s_gender" value="female">
+            <label>female</label>
+            <input type="radio" name="s_gender" value="other">
+            <label>other</label><br><br>
+
+            <label><b>Enter Student Email : </b></label>
+            <input type="email" name="s_email"><br><br>
+            <label><b>Enter Student Joining Date :</b> </label>
+            <input type="date" name="s_jdate"><br><br>
+            <label><b>Enter Student Qualification : </b></label>
+            <select name="s_qualification">
+                <option value="Diploma">Diploma</option>
+                <option value="Degree">Degree</option>
+                <option value="Plustwo">Plustwo</option>
+            </select><br><br>
+            <label><b>Enter Student Phone No : </b></label>
+            <input type="number" name="s_pno"><br><br>
+            <button type="submit" style="border: 150px;px; background-color: black; color: aliceblue; padding: 10px;">Submit</button>
+        
+        </div>
+
+
+        </form>
+    </center>
+    </div>
+    
+</body>
+</html>
