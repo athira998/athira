@@ -57,3 +57,6 @@ def delete(request,pk):
     st=Student.objects.get(id=pk)
     st.delete()
     return redirect('show_student')
+
+def home(request):
+    return render(request,'home.html')
